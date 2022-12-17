@@ -1,0 +1,16 @@
+<div *ngFor="let item of items ;let i = index">
+  <form class="mt-4 mb-2  p-2 border">
+    <div class=" row justify-content-between">
+      <p class="col fw-bold" >{{ item }}</p>
+      <div class="col ms-0  d-flex justify-content-end align-items-center">
+        <!-- <input type="button" value="Done" class="btn btn-outline-success" (click)="handleComplete()"/> -->
+        <input
+          type="button"
+          value="Delete"
+          class="btn btn-outline-danger ms-2"
+          (click)="handleDeleteItem()"
+        />
+      </div>
+    </div>
+  </form>
+</div>
