@@ -1,13 +1,29 @@
 <div class="container pt-5 pb-5">
-  <h1 class="   text-center">TO DO List!</h1>
-<form>
-  <div class="mb-3 mt-5">
-    <input type="text" name="task" class="form-control" [(ngModel)]="task">
-    <label class="form-check-label" >Enter your task</label>
-  </div>
-  <button type="submit" class="btn btn-outline-light" (click)="handleAddTsk()">ADD</button>
-</form>
-
-  <app-container-items [items]="arrTasks" (deleteItem)="deleteTask($event)"></app-container-items>
-<button class="btn btn-danger mt-2" (click)="handleDeleteAllTasks()" *ngIf="arrTasks.length >0" >Delete All Tasks</button>
+  <h1 class="text-light text-center" style="font-size: 50px">TO DO List</h1>
+  <div *ngIf="isload">ggggggg</div>
+  <form>
+    <div class="mb-3 mt-5">
+      <input
+      placeholder="Enter your task..."
+        name="task"
+        class="w-100 p-2 pb-4 bg-dark text-light border-bottom"
+        [(ngModel)]="task"
+      />
+      <label class="form-check-label" *ngIf="!isTask">Enter your task</label>
+    </div>
+    <button type="submit" class="btn btn-light" (click)="handleAddTsk()">
+      ADD
+    </button>
+  </form>
+  <app-container-items
+    [items]="arrTasks"
+    (deleteItem)="deleteTask($event)"
+  ></app-container-items>
+  <button
+    class="btn btn-danger mt-2"
+    (click)="handleDeleteAllTasks()"
+    *ngIf="arrTasks.length > 0"
+  >
+    Delete All Tasks <i class="bi bi-x-circle"></i>
+  </button>
 </div>

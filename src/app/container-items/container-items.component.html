@@ -1,15 +1,15 @@
-<div *ngFor="let item of items ;let i = index">
-  <form class="mt-4   p-2 border">
-    <div class=" row justify-content-between">
-      <p class="col fw-bold" >{{ item }}</p>
-      <div class="col ms-0  d-flex justify-content-end align-items-center">
-        <!-- <input type="button" value="Done" class="btn btn-outline-success" (click)="handleComplete()"/> -->
-        <input
-          type="button"
-          value="Delete"
-          class="btn btn-danger ms-2"
-          (click)="handleDeleteItem()"
-        />
+<h3 *ngIf="items.length == 0" class="text-center text-dark">
+  lets do some tasks!
+</h3>
+<div class="bg-dark " *ngFor="let item of items; let i = index">
+  <form class="mt-4 p-2  border-bottom">
+    <div class="row justify-content-between align-items-center">
+      <p class="col fw-bold mb-0">{{ item }}</p>
+      <div class="col ms-0 d-flex justify-content-end align-items-center">
+        <app-item></app-item>
+        <div class="btn btn-danger ms-2" title="Delete" (click)="handleDeleteItem(i)">
+          Delete <i class="bi bi-x-circle"></i>
+        </div>
       </div>
     </div>
   </form>

@@ -8,16 +8,17 @@ import { Component,Input,Output, EventEmitter  } from '@angular/core';
 export class ContainerItemsComponent {
   @Input() items=[];
   @Output() deleteItem = new EventEmitter<number>();
-  index:number=0;
-  completeTask:boolean=false;
+  constructor(){
+    
+  }
+  
   OnInit(){
 
+
   }
 
-  handleDeleteItem(){
-    this.deleteItem.emit(this.index)
+  handleDeleteItem(el:number){
+    this.deleteItem.emit(el)
   }
-  // handleComplete(){
-  //   this.completeTask = !this.completeTask;
-  // }
+  
 }

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-
+  completeTask:boolean=false;
+  completeHandler() {
+    this.completeTask = !this.completeTask;
+  }
 }
